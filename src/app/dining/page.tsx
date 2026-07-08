@@ -1,140 +1,100 @@
-import { Metadata } from 'next';
-import { UtensilsCrossed, Clock, Coffee, Wine } from 'lucide-react';
-import { formatKsh } from '@/lib/pricing';
+import Image from 'next/image';
+import { Clock, Utensils, Coffee } from 'lucide-react';
 
-export const metadata: Metadata = {
-  title: 'Dining & Bar',
-  description:
-    'Experience authentic Kenyan cuisine at RosaBlu Hotel. Enjoy pure Kienyeji chicken, Mt. Kenya trout, and a full English breakfast.',
+export const metadata = {
+  title: 'Dining & Bar | RosaBlu Hotel Kutus',
+  description: 'Experience local flavors including Kienyeji chicken and Mt. Kenya trout.',
 };
+
+const menuHighlights = [
+  {
+    category: 'Breakfast',
+    items: [
+      { name: 'English Breakfast (Adult)', price: 300.0000 },
+      { name: 'English Breakfast (Child)', price: 150.0000 },
+    ]
+  },
+  {
+    category: 'Main Courses',
+    items: [
+      { name: 'Pure Kienyeji Chicken', price: 1200.0000 },
+      { name: 'Lake Victoria Fish', price: 900.0000 },
+      { name: 'Mt. Kenya Trout', price: 1050.0000 },
+    ]
+  }
+];
 
 export default function DiningPage() {
   return (
     <div className="pt-20">
-      {/* Hero Banner */}
-      <section className="relative py-24 sm:py-32 overflow-hidden bg-surface">
-        <div className="absolute inset-0 bg-[url('/images/dining-bg.jpg')] bg-cover bg-center opacity-20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-4">
-            Restaurant & Lounge
-          </p>
-          <h1 className="section-title text-white mb-6">
-            Local Flavors, <span className="text-gradient">Village Charm</span>
+      <section className="relative h-[50vh] flex items-center justify-center">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/dining.png"
+            alt="RosaBlu Dining Experience"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+        <div className="relative z-10 text-center px-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-md">
+            Dining & Bar
           </h1>
-          <p className="text-lg text-white/55 leading-relaxed max-w-2xl mx-auto">
-            Our culinary team takes pride in sourcing the freshest local ingredients
-            from Kirinyaga County to create unforgettable dining experiences.
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto drop-shadow-sm">
+            Savor authentic Kenyan cuisine and refreshing drinks in our rustic-elegant restaurant.
           </p>
         </div>
       </section>
 
-      {/* Main Features */}
-      <section className="py-16 bg-surface">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8 mb-20">
-            <div className="glassmorphism p-8 rounded-2xl text-center">
-              <Clock className="w-8 h-8 text-primary mx-auto mb-4" />
-              <h3 className="text-lg font-bold text-white mb-2">Opening Hours</h3>
-              <p className="text-white/50 text-sm">Open daily until 23:00</p>
-            </div>
-            <div className="glassmorphism p-8 rounded-2xl text-center">
-              <UtensilsCrossed className="w-8 h-8 text-primary mx-auto mb-4" />
-              <h3 className="text-lg font-bold text-white mb-2">Room Service</h3>
-              <p className="text-white/50 text-sm">Available for all rooms</p>
-            </div>
-            <div className="glassmorphism p-8 rounded-2xl text-center">
-              <Coffee className="w-8 h-8 text-primary mx-auto mb-4" />
-              <h3 className="text-lg font-bold text-white mb-2">English Breakfast</h3>
-              <p className="text-white/50 text-sm">Served from 06:30 to 10:00</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Highlights */}
-      <section className="py-20 bg-surface-elevated">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-6">Signature Dishes</h2>
-              <p className="text-white/55 leading-relaxed mb-8">
-                We are famous in Kutus for our authentic, locally-sourced specialties.
-                Our pure Kienyeji chicken is free-range and slow-cooked to perfection.
-                We also serve fresh Mt. Kenya trout from nearby highland rivers, and
-                premium Lake Victoria fish.
-              </p>
-              <ul className="space-y-4">
-                <li className="flex items-center gap-3 text-white/70">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
-                  Pure & Improved Kienyeji Chicken
-                </li>
-                <li className="flex items-center gap-3 text-white/70">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
-                  Fresh Mt. Kenya Trout
-                </li>
-                <li className="flex items-center gap-3 text-white/70">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
-                  Lake Victoria Tilapia & Nile Perch
-                </li>
-                <li className="flex items-center gap-3 text-white/70">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
-                  Traditional Kirinyaga Accompaniments
-                </li>
-              </ul>
-            </div>
-            <div className="aspect-[4/3] rounded-3xl overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 border border-white/5 flex items-center justify-center">
-              <UtensilsCrossed className="w-24 h-24 text-primary/20" />
-            </div>
-          </div>
-
-          {/* Breakfast Menu */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="aspect-[4/3] rounded-3xl overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 border border-white/5 flex items-center justify-center order-2 lg:order-1">
-              <Coffee className="w-24 h-24 text-primary/20" />
-            </div>
-            <div className="order-1 lg:order-2">
-              <h2 className="text-3xl font-bold text-white mb-6">Breakfast Options</h2>
-              <p className="text-white/55 leading-relaxed mb-8">
-                Start your day right with our hearty full English Breakfast,
-                featuring fresh local ingredients, eggs to order, sausages,
-                baked beans, toast, and premium Kenyan tea or coffee.
-              </p>
-              
-              <div className="glassmorphism rounded-2xl p-6 mb-6">
-                <div className="flex justify-between items-center mb-2">
-                  <h4 className="text-lg font-bold text-white">English Breakfast (Adult)</h4>
-                  <span className="text-primary font-bold">{formatKsh(300.0000)}</span>
-                </div>
-                <p className="text-sm text-white/50">Full portion with tea or coffee</p>
+      <section className="section-padding bg-surface">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row gap-8 items-center justify-between bg-surface-elevated p-8 rounded-2xl shadow-sm border border-black/5 mb-12">
+            <div className="flex items-center gap-4">
+              <div className="p-4 bg-primary/10 rounded-full text-primary">
+                <Clock className="w-8 h-8" />
               </div>
-
-              <div className="glassmorphism rounded-2xl p-6">
-                <div className="flex justify-between items-center mb-2">
-                  <h4 className="text-lg font-bold text-white">English Breakfast (Child)</h4>
-                  <span className="text-primary font-bold">{formatKsh(150.0000)}</span>
-                </div>
-                <p className="text-sm text-white/50">Half portion for children under 12</p>
+              <div>
+                <h3 className="text-xl font-bold text-primary-dark">Opening Hours</h3>
+                <p className="text-foreground/70">Daily from 06:00 to 23:00</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="p-4 bg-accent/10 rounded-full text-accent">
+                <Utensils className="w-8 h-8" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-primary-dark">In-Room Dining</h3>
+                <p className="text-foreground/70">Available upon request</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Bar / Lounge */}
-      <section className="py-24 bg-surface">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Wine className="w-12 h-12 text-primary mx-auto mb-6" />
-          <h2 className="text-3xl font-bold text-white mb-6">The Lounge Bar</h2>
-          <p className="text-white/55 leading-relaxed mb-10">
-            Unwind after a long day in our cozy lounge bar. Enjoy the daily manager&apos;s
-            reception, catch up on sports on our large screens, or simply relax with
-            a cold drink and great conversation. We stock a wide variety of local and
-            international beverages.
-          </p>
-          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 text-white/70">
-            <Clock className="w-4 h-4 text-primary" />
-            <span>Open until 23:00 Daily</span>
+          <div className="space-y-12">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-bold text-primary">Menu Highlights</h2>
+              <div className="w-24 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {menuHighlights.map((section, idx) => (
+                <div key={idx} className="bg-white p-8 rounded-2xl border border-black/5 shadow-sm">
+                  <h3 className="text-2xl font-bold text-primary-dark mb-6 flex items-center gap-2">
+                    {section.category === 'Breakfast' ? <Coffee className="w-6 h-6 text-accent" /> : <Utensils className="w-6 h-6 text-accent" />}
+                    {section.category}
+                  </h3>
+                  <div className="space-y-4">
+                    {section.items.map((item, itemIdx) => (
+                      <div key={itemIdx} className="flex justify-between items-center border-b border-black/5 pb-4 last:border-0 last:pb-0">
+                        <span className="font-medium text-foreground">{item.name}</span>
+                        <span className="font-bold text-accent">Ksh {item.price.toFixed(4)}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

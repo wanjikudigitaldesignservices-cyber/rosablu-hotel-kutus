@@ -18,22 +18,18 @@ export default function HeroSection() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/images/hero-bg.jpg')`,
-            filter: 'brightness(0.3)',
+            backgroundImage: `url('/images/hero.png')`,
           }}
         />
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-surface/30 via-surface/60 to-surface" />
-        {/* Animated accent elements */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-500" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/40 to-surface" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
         {/* Badge */}
         <div
-          className={`inline-flex items-center gap-2 px-4 py-2 rounded-full glassmorphism mb-8 transition-all duration-700 ${
+          className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md mb-8 border border-white/20 transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >
@@ -42,25 +38,25 @@ export default function HeroSection() {
               <Star key={i} className="w-3 h-3 text-accent fill-accent" />
             ))}
           </div>
-          <span className="text-xs font-medium text-white/70">
+          <span className="text-xs font-medium text-white shadow-sm">
             Kutus&apos; Premier Village Retreat
           </span>
         </div>
 
         {/* Headline */}
         <h1
-          className={`section-title text-white mb-6 transition-all duration-700 delay-100 ${
+          className={`section-title text-white mb-6 drop-shadow-md transition-all duration-700 delay-100 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
           Where Serenity Meets
           <br />
-          <span className="text-gradient">Village Charm</span>
+          <span className="text-accent-light">Village Charm</span>
         </h1>
 
         {/* Sub-headline */}
         <p
-          className={`text-lg sm:text-xl text-white/60 max-w-2xl mx-auto mb-4 leading-relaxed transition-all duration-700 delay-200 ${
+          className={`text-lg sm:text-xl text-white/90 max-w-2xl mx-auto mb-4 leading-relaxed drop-shadow transition-all duration-700 delay-200 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
@@ -70,12 +66,12 @@ export default function HeroSection() {
 
         {/* Location */}
         <div
-          className={`flex items-center justify-center gap-2 text-sm text-white/40 mb-10 transition-all duration-700 delay-300 ${
+          className={`flex items-center justify-center gap-2 text-sm text-white/80 mb-10 drop-shadow transition-all duration-700 delay-300 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <MapPin className="w-4 h-4 text-primary/60" />
-          <span>Kutus Town, Kirinyaga County, Kenya · C8VP+59</span>
+          <MapPin className="w-4 h-4 text-accent-light" />
+          <span>Kutus Town, Kirinyaga County, Kenya</span>
         </div>
 
         {/* CTAs */}
@@ -84,10 +80,10 @@ export default function HeroSection() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <Link href="/booking" className="btn-primary text-base px-8 py-4 animate-pulse-glow">
+          <Link href="/booking" className="btn-primary text-base px-8 py-4 shadow-lg">
             Book Your Stay
           </Link>
-          <Link href="/rooms" className="btn-secondary text-base px-8 py-4">
+          <Link href="/rooms" className="btn-secondary text-base px-8 py-4 bg-white/10 text-white border-white/30 hover:bg-white/20">
             Explore Our Rooms
           </Link>
         </div>
@@ -103,17 +99,12 @@ export default function HeroSection() {
             { value: '700m', label: 'From CBD' },
             { value: '6', label: 'Room Types' },
           ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="text-2xl font-bold text-gradient">{stat.value}</div>
-              <div className="text-xs text-white/40 mt-1">{stat.label}</div>
+            <div key={stat.label} className="text-center p-4 rounded-xl bg-surface/80 backdrop-blur-sm shadow-sm border border-black/5">
+              <div className="text-2xl font-bold text-primary">{stat.value}</div>
+              <div className="text-xs text-foreground/70 mt-1">{stat.label}</div>
             </div>
           ))}
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <ArrowDown className="w-5 h-5 text-white/30" />
       </div>
     </section>
   );

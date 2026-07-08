@@ -23,14 +23,14 @@ export default function BookingWidget() {
   return (
     <section className="relative -mt-24 z-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        <div className="glassmorphism rounded-2xl p-6 sm:p-8 shadow-2xl shadow-black/30">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-white/60 mb-6 text-center">
+        <div className="bg-surface rounded-2xl p-6 sm:p-8 shadow-xl border border-black/5">
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-primary-dark mb-6 text-center">
             Quick Availability Search
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             {/* Check-in */}
             <div className="space-y-2">
-              <label className="flex items-center gap-2 text-xs font-medium text-white/50 uppercase tracking-wider">
+              <label className="flex items-center gap-2 text-xs font-medium text-foreground/60 uppercase tracking-wider">
                 <CalendarDays className="w-3.5 h-3.5" />
                 Check-in
               </label>
@@ -45,7 +45,7 @@ export default function BookingWidget() {
 
             {/* Check-out */}
             <div className="space-y-2">
-              <label className="flex items-center gap-2 text-xs font-medium text-white/50 uppercase tracking-wider">
+              <label className="flex items-center gap-2 text-xs font-medium text-foreground/60 uppercase tracking-wider">
                 <CalendarDays className="w-3.5 h-3.5" />
                 Check-out
               </label>
@@ -60,7 +60,7 @@ export default function BookingWidget() {
 
             {/* Guests */}
             <div className="space-y-2">
-              <label className="flex items-center gap-2 text-xs font-medium text-white/50 uppercase tracking-wider">
+              <label className="flex items-center gap-2 text-xs font-medium text-foreground/60 uppercase tracking-wider">
                 <Users className="w-3.5 h-3.5" />
                 Guests
               </label>

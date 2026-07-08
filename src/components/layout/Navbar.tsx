@@ -42,22 +42,22 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'glassmorphism shadow-lg shadow-black/20'
-          : 'bg-transparent'
+          ? 'glassmorphism'
+          : 'bg-surface/80 backdrop-blur-md'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-brand flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
               <Hotel className="w-5 h-5 text-white" />
             </div>
             <div className="flex flex-col">
-              <span className="text-lg font-bold tracking-tight text-white">
-                Rosa<span className="text-gradient">Blu</span>
+              <span className="text-lg font-bold tracking-tight text-foreground">
+                Rosa<span className="text-accent">Blu</span>
               </span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-white/50 -mt-1">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-foreground/60 -mt-1">
                 Hotel Kutus
               </span>
             </div>
@@ -72,7 +72,7 @@ export default function Navbar() {
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                   pathname === link.href
                     ? 'text-primary bg-primary/10'
-                    : 'text-white/70 hover:text-white hover:bg-white/5'
+                    : 'text-foreground/80 hover:text-primary hover:bg-black/5'
                 }`}
               >
                 {link.label}
@@ -83,7 +83,7 @@ export default function Navbar() {
             <div className="relative">
               <button
                 onClick={() => setShowMore(!showMore)}
-                className="flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium text-white/70 hover:text-white hover:bg-white/5 transition-all duration-300"
+                className="flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium text-foreground/80 hover:text-primary hover:bg-black/5 transition-all duration-300"
               >
                 More
                 <ChevronDown
@@ -93,7 +93,7 @@ export default function Navbar() {
                 />
               </button>
               {showMore && (
-                <div className="absolute top-full right-0 mt-2 w-48 py-2 glassmorphism rounded-xl shadow-xl animate-fade-in">
+                <div className="absolute top-full right-0 mt-2 w-48 py-2 glassmorphism rounded-xl shadow-xl animate-fade-in border border-black/5">
                   {moreLinks.map((link) => (
                     <Link
                       key={link.href}
@@ -102,7 +102,7 @@ export default function Navbar() {
                       className={`block px-4 py-2.5 text-sm transition-colors ${
                         pathname === link.href
                           ? 'text-primary bg-primary/10'
-                          : 'text-white/70 hover:text-white hover:bg-white/5'
+                          : 'text-foreground/80 hover:text-primary hover:bg-black/5'
                       }`}
                     >
                       {link.label}
@@ -114,7 +114,7 @@ export default function Navbar() {
                     className={`block px-4 py-2.5 text-sm transition-colors ${
                       pathname === '/privacy'
                         ? 'text-primary bg-primary/10'
-                        : 'text-white/70 hover:text-white hover:bg-white/5'
+                        : 'text-foreground/80 hover:text-primary hover:bg-black/5'
                     }`}
                   >
                     Privacy & Terms
@@ -131,7 +131,7 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition-colors"
+            className="lg:hidden p-2 rounded-lg text-foreground/80 hover:text-primary hover:bg-black/5 transition-colors"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -140,11 +140,11 @@ export default function Navbar() {
 
       {/* Mobile Nav */}
       <div
-        className={`lg:hidden transition-all duration-500 overflow-hidden ${
+        className={`lg:hidden transition-all duration-500 overflow-hidden bg-surface ${
           isOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="glassmorphism mx-4 mb-4 rounded-2xl p-4 space-y-1">
+        <div className="mx-4 mb-4 rounded-2xl p-4 space-y-1">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -153,7 +153,7 @@ export default function Navbar() {
               className={`block px-4 py-3 rounded-xl text-sm font-medium transition-all ${
                 pathname === link.href
                   ? 'text-primary bg-primary/10'
-                  : 'text-white/70 hover:text-white hover:bg-white/5'
+                  : 'text-foreground/80 hover:text-primary hover:bg-black/5'
               }`}
             >
               {link.label}
@@ -165,7 +165,7 @@ export default function Navbar() {
             className={`block px-4 py-3 rounded-xl text-sm font-medium transition-all ${
               pathname === '/privacy'
                 ? 'text-primary bg-primary/10'
-                : 'text-white/70 hover:text-white hover:bg-white/5'
+                : 'text-foreground/80 hover:text-primary hover:bg-black/5'
             }`}
           >
             Privacy & Terms
