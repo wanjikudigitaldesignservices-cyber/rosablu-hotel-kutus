@@ -10,16 +10,16 @@ const menuHighlights = [
   {
     category: 'Breakfast',
     items: [
-      { name: 'English Breakfast (Adult)', price: 300.0000 },
-      { name: 'English Breakfast (Child)', price: 150.0000 },
+      { name: 'Full English Breakfast', price: 300.0000, image: 'https://images.unsplash.com/photo-1533089859732-72084df9a491?q=80&w=800&auto=format&fit=crop', desc: 'Eggs, sausages, baked beans, toast, and grilled tomatoes' },
     ]
   },
   {
     category: 'Main Courses',
     items: [
-      { name: 'Pure Kienyeji Chicken', price: 1200.0000 },
-      { name: 'Lake Victoria Fish', price: 900.0000 },
-      { name: 'Mt. Kenya Trout', price: 1050.0000 },
+      { name: 'Pure Kienyeji Chicken', price: 1200.0000, image: '/images/food/kienyeji-chicken.png', desc: 'Authentic Kenyan Kienyeji chicken stew served with ugali and sukuma wiki' },
+      { name: 'Lake Victoria Fish', price: 900.0000, image: 'https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?q=80&w=800&auto=format&fit=crop', desc: 'Deep-fried whole tilapia served with kachumbari' },
+      { name: 'Mt. Kenya Trout', price: 1050.0000, image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=800&auto=format&fit=crop', desc: 'Pan-seared fresh trout with herbs and roasted potatoes' },
+      { name: 'Nyama Choma', price: 1500.0000, image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800&auto=format&fit=crop', desc: 'Authentic Kenyan roasted goat meat served with kachumbari' },
     ]
   }
 ];
@@ -84,11 +84,19 @@ export default function DiningPage() {
                     {section.category === 'Breakfast' ? <Coffee className="w-6 h-6 text-accent" /> : <Utensils className="w-6 h-6 text-accent" />}
                     {section.category}
                   </h3>
-                  <div className="space-y-4">
+                  <div className="grid grid-cols-1 gap-6">
                     {section.items.map((item, itemIdx) => (
-                      <div key={itemIdx} className="flex justify-between items-center border-b border-black/5 pb-4 last:border-0 last:pb-0">
-                        <span className="font-medium text-foreground">{item.name}</span>
-                        <span className="font-bold text-accent">Ksh {item.price.toFixed(4)}</span>
+                      <div key={itemIdx} className="flex flex-col sm:flex-row gap-4 items-center bg-surface p-4 rounded-xl border border-black/5 hover:shadow-md transition-shadow">
+                        <div className="relative w-full sm:w-28 h-28 shrink-0 rounded-lg overflow-hidden">
+                          <Image src={item.image} alt={item.name} fill className="object-cover" />
+                        </div>
+                        <div className="flex-1 w-full">
+                          <div className="flex justify-between items-start mb-1">
+                            <h4 className="font-bold text-primary-dark text-lg">{item.name}</h4>
+                            <span className="font-bold text-accent whitespace-nowrap ml-4">Ksh {item.price.toFixed(4)}</span>
+                          </div>
+                          <p className="text-sm text-foreground/70 leading-relaxed">{item.desc}</p>
+                        </div>
                       </div>
                     ))}
                   </div>
