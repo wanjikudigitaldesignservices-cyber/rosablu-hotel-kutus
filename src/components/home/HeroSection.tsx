@@ -15,12 +15,15 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with overlay */}
       <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('/images/hero.png')`,
-          }}
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/hero-bg.mp4" type="video/mp4" />
+        </video>
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/40 to-surface" />
       </div>
