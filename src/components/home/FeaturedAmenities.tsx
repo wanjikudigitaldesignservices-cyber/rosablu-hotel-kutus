@@ -62,10 +62,10 @@ export default function FeaturedAmenities() {
           <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">
             What We Offer
           </p>
-          <h2 className="section-title text-white mb-4">
+          <h2 className="section-title text-primary-dark mb-4">
             Premium <span className="text-gradient">Amenities</span>
           </h2>
-          <p className="text-white/50 max-w-xl mx-auto">
+          <p className="text-foreground/70 max-w-xl mx-auto">
             Everything you need for a comfortable and memorable stay in Kutus Town.
           </p>
         </div>
@@ -92,10 +92,10 @@ export default function FeaturedAmenities() {
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
                 )}
               </div>
-              <h3 className="text-base font-semibold text-white mb-2">
+              <h3 className="text-base font-semibold text-primary-dark mb-2">
                 {amenity.title}
               </h3>
-              <p className="text-sm text-white/45 leading-relaxed">
+              <p className="text-sm text-foreground/70 leading-relaxed">
                 {amenity.description}
               </p>
             </div>

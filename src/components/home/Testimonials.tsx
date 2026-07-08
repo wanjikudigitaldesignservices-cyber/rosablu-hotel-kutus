@@ -32,7 +32,7 @@ export default function Testimonials() {
           <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">
             Guest Stories
           </p>
-          <h2 className="section-title text-white mb-4">
+          <h2 className="section-title text-primary-dark mb-4">
             What Our <span className="text-gradient">Guests Say</span>
           </h2>
         </div>
@@ -52,7 +52,7 @@ export default function Testimonials() {
               </div>
 
               {/* Text */}
-              <p className="text-sm text-white/60 leading-relaxed mb-6 italic">
+              <p className="text-sm text-foreground/70 leading-relaxed mb-6 italic">
                 &ldquo;{testimonial.text}&rdquo;
               </p>
 
@@ -62,10 +62,10 @@ export default function Testimonials() {
                   {testimonial.name.charAt(0)}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-white">
+                  <p className="text-sm font-semibold text-primary-dark">
                     {testimonial.name}
                   </p>
-                  <p className="text-xs text-white/40">{testimonial.role}</p>
+                  <p className="text-xs text-foreground/60">{testimonial.role}</p>
                 </div>
               </div>
             </div>

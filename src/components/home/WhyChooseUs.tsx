@@ -39,10 +39,10 @@ export default function WhyChooseUs() {
             <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">
               Why RosaBlu
             </p>
-            <h2 className="section-title text-white mb-6">
+            <h2 className="section-title text-primary-dark mb-6">
               A Retreat <span className="text-gradient">Unlike Any Other</span>
             </h2>
-            <p className="text-white/50 leading-relaxed mb-10">
+            <p className="text-foreground/70 leading-relaxed mb-10">
               RosaBlu Hotel isn&apos;t just a place to sleep — it&apos;s a destination.
               Nestled past Joymax (Kavagara), opposite Sifa Gardens, our hotel offers
               the perfect blend of village charm and modern comfort. Whether you&apos;re
@@ -59,10 +59,10 @@ export default function WhyChooseUs() {
                       <Icon className="w-5 h-5 text-primary/70 group-hover:text-primary transition-colors" />
                     </div>
                     <div>
-                      <h3 className="text-base font-semibold text-white mb-1">
+                      <h3 className="text-base font-semibold text-primary-dark mb-1">
                         {reason.title}
                       </h3>
-                      <p className="text-sm text-white/45 leading-relaxed">
+                      <p className="text-sm text-foreground/70 leading-relaxed">
                         {reason.description}
                       </p>
                     </div>
@@ -83,7 +83,7 @@ export default function WhyChooseUs() {
                   <h3 className="text-2xl font-bold text-white mb-3">
                     Serene Village Living
                   </h3>
-                  <p className="text-white/50 text-sm max-w-xs mx-auto">
+                  <p className="text-white/80 text-sm max-w-xs mx-auto">
                     Experience the warmth of Kirinyaga County with modern amenities
                     and authentic Kenyan hospitality.
                   </p>
@@ -94,7 +94,7 @@ export default function WhyChooseUs() {
             {/* Floating card */}
             <div className="absolute -bottom-6 -left-6 glassmorphism rounded-2xl p-5 max-w-[200px] animate-float" style={{ animationDelay: '1s' }}>
               <div className="text-3xl font-bold text-gradient mb-1">4.8★</div>
-              <p className="text-xs text-white/50">Guest satisfaction rating</p>
+              <p className="text-xs text-foreground/70">Guest satisfaction rating</p>
             </div>
           </div>
         </div>
