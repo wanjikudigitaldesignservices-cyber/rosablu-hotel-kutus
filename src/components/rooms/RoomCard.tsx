@@ -26,7 +26,7 @@ export default function RoomCard({ room }: RoomCardProps) {
           </span>
         </div>
         <div className="absolute bottom-4 right-4">
-          <span className="px-4 py-2 rounded-xl glassmorphism text-base font-bold text-white shadow-lg">
+          <span className="px-4 py-2 rounded-xl bg-black/70 backdrop-blur-md text-base font-bold text-white shadow-lg border border-white/10">
             {formatKsh(room.base_price)}
             <span className="text-white/80 font-normal text-xs ml-1">/night</span>
           </span>

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { MapPin, Leaf, Heart, Globe } from 'lucide-react';
 
 const reasons = [
@@ -74,16 +75,23 @@ export default function WhyChooseUs() {
 
           {/* Right — Visual */}
           <div className="relative">
-            <div className="aspect-[4/5] rounded-3xl overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 border border-white/5">
-              <div className="absolute inset-0 flex items-center justify-center">
+            <div className="aspect-[4/5] rounded-3xl overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 border border-white/5 relative">
+              <Image
+                src="/images/village-living.png"
+                alt="Serene Village Living at RosaBlu Hotel Kutus"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-black/40" />
+              <div className="absolute inset-0 flex items-center justify-center z-10">
                 <div className="text-center p-8">
                   <div className="w-20 h-20 rounded-2xl bg-gradient-brand mx-auto flex items-center justify-center mb-6 animate-float">
                     <Leaf className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-3">
+                  <h3 className="text-2xl font-bold text-white mb-3 drop-shadow-md">
                     Serene Village Living
                   </h3>
-                  <p className="text-white/80 text-sm max-w-xs mx-auto">
+                  <p className="text-white/90 text-sm max-w-xs mx-auto drop-shadow-md font-medium">
                     Experience the warmth of Kirinyaga County with modern amenities
                     and authentic Kenyan hospitality.
                   </p>

@@ -44,7 +44,7 @@ export default function FeaturedRooms() {
                   </span>
                 </div>
                 <div className="absolute bottom-4 right-4">
-                  <span className="px-3 py-1.5 rounded-lg glassmorphism text-sm font-bold text-white">
+                  <span className="px-3 py-1.5 rounded-lg bg-black/70 backdrop-blur-md text-sm font-bold text-white border border-white/10">
                     {formatKsh(room.base_price)}<span className="text-white/80 font-normal text-xs ml-1">/night</span>
                   </span>
                 </div>
