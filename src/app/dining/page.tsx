@@ -10,16 +10,16 @@ const menuHighlights = [
   {
     category: 'Breakfast',
     items: [
-      { name: 'Full English Breakfast', price: 300.0000, image: 'https://images.unsplash.com/photo-1533089859732-72084df9a491?q=80&w=800&auto=format&fit=crop', desc: 'Eggs, sausages, baked beans, toast, and grilled tomatoes' },
+      { name: 'Full English Breakfast', price: 300.0000, desc: 'Eggs, sausages, baked beans, toast, and grilled tomatoes', icon: 'Coffee' },
     ]
   },
   {
     category: 'Main Courses',
     items: [
-      { name: 'Pure Kienyeji Chicken', price: 1200.0000, image: '/images/food/kienyeji-chicken.png', desc: 'Authentic Kenyan Kienyeji chicken stew served with ugali and sukuma wiki' },
-      { name: 'Lake Victoria Fish', price: 900.0000, image: 'https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?q=80&w=800&auto=format&fit=crop', desc: 'Deep-fried whole tilapia served with kachumbari' },
-      { name: 'Mt. Kenya Trout', price: 1050.0000, image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=800&auto=format&fit=crop', desc: 'Pan-seared fresh trout with herbs and roasted potatoes' },
-      { name: 'Nyama Choma', price: 1500.0000, image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800&auto=format&fit=crop', desc: 'Authentic Kenyan roasted goat meat served with kachumbari' },
+      { name: 'Pure Kienyeji Chicken', price: 1200.0000, desc: 'Authentic Kenyan Kienyeji chicken stew served with ugali and sukuma wiki', icon: 'Utensils' },
+      { name: 'Lake Victoria Fish', price: 900.0000, desc: 'Deep-fried whole tilapia served with kachumbari', icon: 'Utensils' },
+      { name: 'Mt. Kenya Trout', price: 1050.0000, desc: 'Pan-seared fresh trout with herbs and roasted potatoes', icon: 'Utensils' },
+      { name: 'Nyama Choma', price: 1500.0000, desc: 'Authentic Kenyan roasted goat meat served with kachumbari', icon: 'Utensils' },
     ]
   }
 ];
@@ -86,9 +86,9 @@ export default function DiningPage() {
                   </h3>
                   <div className="grid grid-cols-1 gap-6">
                     {section.items.map((item, itemIdx) => (
-                      <div key={itemIdx} className="flex flex-col sm:flex-row gap-4 items-center bg-surface p-4 rounded-xl border border-black/5 hover:shadow-md transition-shadow">
-                        <div className="relative w-full sm:w-28 h-28 shrink-0 rounded-lg overflow-hidden">
-                          <Image src={item.image} alt={item.name} fill className="object-cover" />
+                      <div key={itemIdx} className="flex gap-4 items-center bg-surface p-6 rounded-xl border border-black/5 hover:shadow-md transition-shadow">
+                        <div className="w-16 h-16 shrink-0 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+                          {item.icon === 'Coffee' ? <Coffee className="w-8 h-8" /> : <Utensils className="w-8 h-8" />}
                         </div>
                         <div className="flex-1 w-full">
                           <div className="flex justify-between items-start mb-1">
