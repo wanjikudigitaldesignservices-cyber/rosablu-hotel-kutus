@@ -116,6 +116,15 @@ body {
   animation: slideInRight 0.6s ease-out forwards;
 }
 
+@keyframes slideLeftToRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.hover\:animate-play-paused:hover {
+  animation-play-state: paused;
+}
+
 /* Staggered animation delays */
 .delay-100 { animation-delay: 100ms; }
 .delay-200 { animation-delay: 200ms; }
